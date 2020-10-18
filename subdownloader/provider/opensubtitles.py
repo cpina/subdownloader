@@ -109,7 +109,7 @@ class OpenSubtitles(SubtitleProvider):
             self._xmlrpc = None
 
     def connected(self):
-        return self._xmlrpc is not None
+        return self.logged_in()
 
     def login(self):
         log.debug('login()')
