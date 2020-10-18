@@ -89,7 +89,7 @@ class LanguageModel(QAbstractListModel):
 
     def language_to_index(self, language):
         if self._unknown_visible:
-            if language.is_generic():
+            if language is None or language.is_generic():
                 return 0
         try:
             index = next(index for index, lang in enumerate(self._languages) if language == lang)
